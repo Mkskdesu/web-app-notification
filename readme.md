@@ -13,10 +13,14 @@ A javascript Library for to create awesome Notifications
 # Install
 ### script
 `<script src="path/to/dist/index.min.js"></script>`
+
+
 `<script src="https://unpkg.com/web-in-app-notification/dist/index.min.js"><script>`
 
 ### CSS
 `<link rel="stylesheet" href="path/to/dist/style.css">`
+
+
 `<link rel="stylesheet" href="https://unpkg.com/web-in-app-notification/dist/style.css">`
 
 
