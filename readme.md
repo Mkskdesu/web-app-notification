@@ -27,7 +27,7 @@ A javascript Library for to create awesome Notifications
 # How to use
 ## create new notification
 ```javascript
-    const myNotification = new inAppNotification({options});
+    const myNotification = new inAppNotification(options);
 ```
 
 ## options
