@@ -1,0 +1,17 @@
+{
+  "name": "web-in-app-notification",
+  "version": "1.0.0",
+  "description": "A javascript library for to create awesome notifications.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "notification",
+    "web",
+    "in app notification",
+    "css"
+  ],
+  "author": "mksk",
+  "license": "MIT"
+}

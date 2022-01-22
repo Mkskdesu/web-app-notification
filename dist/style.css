@@ -1,0 +1,200 @@
+:root{
+    --in-app-notification-background-color:rgba(65,64,64,0.95);
+    --in-app-notification-text-color:rgb(245,245,245);
+    --in-app-notification-border-style:1px solid rgb(30,30,30);
+    --in-app-notification-border-radius:4px;
+    --in-app-notification-shadow:0 0 4px 0 rgb(0,0,0);
+    --in-app-notification-transition:0.2s;
+    --in-app-notification-animation-easing:ease;
+
+    --in-app-notification-header-footer-color:rgb(150,150,150);
+
+    --in-app-notification-controls-hover:rgba(0,0,0,0.8);
+
+    --in-app-notification-interaction-color:rgb(245,245,245);
+    --in-app-notification-interaction-background:rgb(54,57,63);
+    --in-app-notification-interaction-border:2px solid rgb(100,100,100);
+    --in-app-notification-interaction-focus-border:2px solid #03a7eb;
+    --in-app-notification-interaction-hover-background:rgb(43, 46, 51);
+
+    --in-app-notification-overlay-bg:rgba(20,20,20,0.75);
+    --in-app-notification-overlay-hover-bg:#03a7eb;
+
+    --in-app-notification-bottom-right-height:96px;
+    --in-app-notification-bottom-right-width:256px;
+    --in-app-notification-bottom-right-from-position-right:-272px;
+    --in-app-notification-bottom-right-to-position-right:16px;
+
+    --in-app-notification-top-height:64px;
+    --in-app-notification-top-width: 50%;
+    --in-app-notification-top-from-position-top:-16px;
+    --in-app-notification-top-to-position-top:16px;
+
+    --in-app-notification-top-right-height:84px;
+    --in-app-notification-top-right-width:384px;
+    --in-app-notification-top-right-from-position-right:-400px;
+    --in-app-notification-top-right-to-position-right:16px;
+
+}
+
+.in-app-notification{
+    user-select: none;
+    background: var(--in-app-notification-background-color);
+    color: var(--in-app-notification-text-color);
+    border: var(--in-app-notification-border-style);
+    border-radius: var(--in-app-notification-border-radius);
+    box-shadow: var(--in-app-notification-shadow);
+    transition: var(--in-app-notification-transition);
+    padding: 4px;
+    backdrop-filter: blur(30px);
+    position: absolute;
+    overflow: hidden;
+}
+
+.in-app-notification *{
+    transition: var(--in-app-notification-transition);
+    overflow-wrap: break-word;
+}
+
+.in-app-notification-bottom-right{
+    bottom: 16px;
+    right: var(--in-app-notification-bottom-right-from-position-right);
+    min-height: var(--in-app-notification-bottom-right-height);
+    width: var(--in-app-notification-bottom-right-width);
+}
+.in-app-notification-bottom-right.showed{
+    right: var(--in-app-notification-bottom-right-to-position-right);
+}
+
+.in-app-notification-top{
+    left: 50%;
+    transform: translate(-50%,-100%);
+    top: var(--in-app-notification-top-from-position-top);
+    min-height: var(--in-app-notification-top-height);
+    width: var(--in-app-notification-top-width);
+}
+.in-app-notification-top.showed{
+    transform: translate(-50%,0);
+    top: var(--in-app-notification-top-to-position-top);
+}
+
+.in-app-notification-top-right{
+    top: 32px;
+    min-height: var(--in-app-notification-top-right-height);
+    width: var(--in-app-notification-top-right-width);
+    right: var(--in-app-notification-top-right-from-position-right);
+}
+.in-app-notification-top-right.showed{
+    right: var(--in-app-notification-top-right-to-position-right);
+}
+
+.in-app-notification-title{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.in-app-notification-header,.in-app-notification-footer{
+    line-height: 16px;
+    font-size: 0.5em;
+    color: var(--in-app-notification-header-footer-color);
+}
+.in-app-notification-header-thumbnail{
+    height: 16px;
+    width: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.in-app-notification-controls{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.in-app-notification-controls>svg:hover{
+    background-color: var(--in-app-notification-controls-hover);
+}
+
+.in-app-notification-interactions{
+    margin: 4px 0;
+}
+.in-app-notification-interactions button{
+    color: var(--in-app-notification-interaction-color);
+    background: var(--in-app-notification-interaction-background);
+    border: var(--in-app-notification-interaction-border);
+    border-radius: var(--in-app-notification-border-radius);
+    padding: 4px 32px;
+}
+.in-app-notification-interactions>form>button{
+    padding: 4px;
+    height: 26px;
+    width: 48px;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+.in-app-notification-interactions button:hover{
+    background: var(--in-app-notification-interaction-hover-background);
+}
+.in-app-notification-interactions button:active{
+    border: var(--in-app-notification-interaction-focus-border);
+}
+
+.in-app-notification-interactions>form{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 48px;
+    gap: 16px;
+}
+.in-app-notification-interactions>form>input{
+    height: 26px;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: var(--in-app-notification-border-radius);
+    border: none;
+    border-bottom: var(--in-app-notification-interaction-border);
+    background: var(--in-app-notification-interaction-background);
+    color: var(--in-app-notification-interaction-color);
+}
+.in-app-notification-interactions>form>input:focus{
+    outline: none;
+    border-bottom: var(--in-app-notification-interaction-focus-border);
+}
+
+.in-app-notification-attachment{
+    max-width:100%;
+    max-height: 196px;
+    display: block;
+    margin: 8px auto;
+}
+
+.in-app-notification-menu{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    height: 100%;
+    width: 100%;
+    background-color: var(--in-app-notification-overlay-bg);
+    backdrop-filter: blur(30px);
+    display: none;
+    overflow: auto;
+}
+.in-app-notification-menu.show{
+    left: 0;
+    display: block;
+}
+.in-app-notification-menu-content{
+    padding: 4px;
+    margin: 4px;
+    border-radius: var(--in-app-notification-border-radius);
+}
+.in-app-notification-menu-content:hover{
+    background-color: var(--in-app-notification-overlay-hover-bg);
+}
+.in-app-notification-menu-title{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 32px 1fr;
+    gap: 16px;
+    padding-left: 8px;
+    align-items: center;
+}
